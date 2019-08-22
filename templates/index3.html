@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Opiod Drug Abuse Prediction</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="static/css/util.css">
+<link rel="stylesheet" type="text/css" href="static/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+<div class="container-contact100">
+<div class="wrap-contact100">
+<form class="contact100-form validate-form">
+<span class="contact100-form-title">
+Opiod Drug Abuse Prediction
+</span>
+
+<form action="/result" method="POST">
+
+<div class="wrap-input100 validate-input bg1" data-validate="Enter Age">
+<span class="label-input100">Age *</span>
+<input class="input100" type="text" name="age" placeholder="Enter Age">
+</div>
+
+<div class="wrap-input100 validate-input bg1" data-validate="Enter Opioid Discharge Days Supply">
+<span class="label-input100">Opioid Discharge Days Supply *</span>
+<input class="input100" type="text" name="supply" placeholder="Enter Opioid Discharge Days Supply">
+</div>
+
+<div class="wrap-input100 input100-select bg1">
+<span class="label-input100">Prior Opioid Abuse Diagnosed</span>
+<select class = "js-select2" id="p_abuse" name="p_abuse">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+<div class="dropDownSelect2"></div>
+</div>
+
+
+<!--	<div class="w-full dis-none js-show-service"> -->
+<div class="wrap-contact100-form-radio">
+<span class="label-input100">Gender *</span>
+
+<div class="contact100-form-radio m-t-15">
+<input class="input-radio100" id="radio1" type="radio" name="gender" value="1" checked="checked">
+<label class="label-radio100" for="radio1">
+Male
+</label>
+</div>
+
+<div class="contact100-form-radio">
+<input class="input-radio100" id="radio2" type="radio" name="gender" value="0">
+<label class="label-radio100" for="radio2">
+Female
+</label>
+</div>
+</div>
+<br>
+
+
+<div class="wrap-input100 input100-select bg1">
+<span class="label-input100">Marital Status *</span>
+<div>
+<select class="js-select2" id="martial_stat" name="martial_stat">
+<option value="0">Divorced</option>
+<option value="1">Married</option>
+<option value="2">Not Married</option>
+</select>
+<div class="dropDownSelect2"></div>
+</div>
+</div>
+
+<br>
+<div class="wrap-input100 input100-select bg1">
+<span class="label-input100">Race *</span>
+<select class="js-select2" id="race" name="race">
+<option value="0">Asian</option>
+<option value="1">Black</option>
+<option value="2">Hispanic</option>
+<option value="3">Native</option>
+<option value="4">White</option>
+</select>
+<div class="dropDownSelect2"></div></div>
+
+<br>
+<div class="wrap-input100 input100-select bg1">
+<span class="label-input100">Ethnicity *</span>
+<select class="js-select2" id="eth" name="eth">
+<option value="0">African</option>
+<option value="1">American</option>
+<option value="2">american_indian</option>
+<option value="3">asian_indian</option>
+<option value="4">central_american</option>
+<option value="5">chinese</option>
+<option value="6">dominican</option>
+<option value="7">english</option>
+<option value="8">french</option>
+<option value="9">french_canadian</option>
+<option value="10">german</option>
+<option value="11">greek</option>
+<option value="12">irish</option>
+<option value="13">italian</option>
+<option value="14">polish</option>
+<option value="15">portuguese</option>
+<option value="16">puerto_rican</option>
+<option value="17">russian</option>
+<option value="18">scottish</option>
+<option value="19">swedish</option>
+<option value="20">west_indian</option>
+</select>
+<div class="dropDownSelect2"></div></div>
+<br>
+ <input type="submit" value="Submit">
+
+
+<div class="container-contact100-form-btn">
+<button class="contact100-form-btn" type="submit" value="Submit">
+<span>
+Submit
+<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+</span>
+</button>
+</div>
+</div>
+</div>
+</form>
+</body>
+
+<!--===============================================================================================-->
+<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="static/vendor/bootstrap/js/popper.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="static/vendor/select2/select2.min.js"></script>
+<script>
+$(".js-select2").each(function(){
+$(this).select2({
+minimumResultsForSearch: 20,
+dropdownParent: $(this).next('.dropDownSelect2')
+});
+
+
+$(".js-select2").each(function(){
+$(this).on('select2:close', function (e){
+if($(this).val() == "Please chooses") {
+$('.js-show-service').slideUp();
+}
+else {
+$('.js-show-service').slideUp();
+$('.js-show-service').slideDown();
+}
+});
+});
+})
+</script>
+<!--===============================================================================================-->
+<script src="static/vendor/daterangepicker/moment.min.js"></script>
+<script src="static/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="static/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="static/vendor/noui/nouislider.min.js"></script>
+<script>
+var filterBar = document.getElementById('filter-bar');
+
+noUiSlider.create(filterBar, {
+start: [ 1500, 3900 ],
+connect: true,
+range: {
+'min': 1500,
+'max': 7500
+}
+});
+
+var skipValues = [
+document.getElementById('value-lower'),
+document.getElementById('value-upper')
+];
+
+filterBar.noUiSlider.on('update', function( values, handle ) {
+skipValues[handle].innerHTML = Math.round(values[handle]);
+$('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+$('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+});
+</script>
+<!--===============================================================================================-->
+<script src="static/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
